@@ -87,6 +87,7 @@ Release Date: Not Released
    -  :doc:`Query Builder <database/query_builder>`:
 
       - Added methods ``having_in()``, ``or_having_in()``, ``not_having_in()``, ``or_not_having_in()``.
+      - Updated methods ``where_in()``, ``or_where_in()``, ``not_where_in()``, ``or_not_where_in()`` to reject non-array inputs for the second parameter.
       - Updated method ``join()`` to allow accepting ``NATURAL`` clauses in its third parameter.
       - Updated logic to allow dots in alias names.
 
@@ -134,6 +135,11 @@ Version 3.1.11
 Release Date: Not Released
 
 
+Bug fixes for 3.1.11
+====================
+
+-  Fixed a bug (#5681) - :doc:`Database Forge <database/forge>` method ``modify_column()`` produced erroneous SQL for ``DEFAULT`` attribute changes under PostgreSQL, Firebird.
+-  Fixed a bug (#5692) - :doc:`Database Forge <database/forge>` didn't handle column nullability with the 'oci8', 'pdo/oci' drivers.
 
 Version 3.1.10
 ==============
